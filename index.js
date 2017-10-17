@@ -96,7 +96,9 @@ exports.createOptions = function() {
 
 /* Create a P_MUL client with options */
 exports.createPmulClient = function (options) {
-        opt = createOptions();
+        var opt = {
+            pythonPath: 'python3'
+        };
         if (options != null && options.pythonPath != null)  {
             opt.pythonPath = options.pythonPath
         }
