@@ -1,6 +1,6 @@
 {
     "name": "pmul-client",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "P_MUL client for the of the python based P_MUL protocol",
     "main": "index.js",
     "scripts": {

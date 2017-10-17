@@ -103,26 +103,3 @@ exports.createPmulClient = function (options) {
         return new PmulClient(opt);
 };
 
-/* Main Program ***********************************************************************/
-
-function generate_message(len) {
-    var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-    for (var i = 0; i < len; i++) {
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-    return text;
-}
-message = generate_message(5012);
-var options = {
-    pythonPath: 'python3'
-}
-cli = new PmulClient(options);
-
-cli.sendMessage(['127.0.0.1'], message, function() {
-    console.log('Delivery of message finished at client');
-});
-cli.on('message', function(message, addr) {
-    console.log('Received message of len ' + message.length + ' from ' + addr);
-});
-
